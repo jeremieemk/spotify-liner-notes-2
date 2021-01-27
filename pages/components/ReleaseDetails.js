@@ -7,13 +7,22 @@ export default function ReleaseDetails(props) {
     return spotifyData.artists.map((artist) => artist.name).join(", ");
   }
 
+  const orderedReleaselist =
+    discogsData &&
+    discogsData
+      .sort((a, b) => {
+        return b.community.want - a.community.want;
+      })
+      .slice(0, 10);
+
+  console.log("ordered list", orderedReleaselist);
   return (
     <div>
       <h1>
         {renderArtists()} - {spotifyData.name}
       </h1>
       {discogsData &&
-        discogsData.map((release) => {
+        orderedReleaselist.map((release) => {
           return (
             <>
               <h1>
