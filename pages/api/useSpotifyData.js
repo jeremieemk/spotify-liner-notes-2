@@ -3,29 +3,29 @@ import { useEffect, useState } from "react";
 export default function useSpotifyData(accessToken) {
   const [spotifyData, setSpotifyData] = useState(null);
   useEffect(() => {
-      accessToken && fetchCurrentTrack(accessToken, setSpotifyData)
+    accessToken && fetchCurrentTrack(accessToken, setSpotifyData);
   }, [accessToken]);
 
   function fetchCurrentTrack(accessToken, setSpotifyData) {
     const nowPlayingApiUrl = "https://api.spotify.com/v1/me/player";
     fetch(nowPlayingApiUrl, {
-        headers: { Authorization: "Bearer " + accessToken },
+      headers: { Authorization: "Bearer " + accessToken },
     })
-        .then((response) => {
+      .then((response) => {
         if (response.status === 204 || response.status === 401) {
-            console.log(response)
-            console.log("manage error")
+          console.log(response);
+          console.log("manage error");
         } else {
-            return response.json();
+          return response.json();
         }
-        })
-        .then((data) => {
+      })
+      .then((data) => {
         setSpotifyData(data.item);
-        })
-        .catch(function (error) {
+      })
+      .catch(function (error) {
         console.log(error);
-        });
-    }
-  
-    return spotifyData
+      });
+  }
+
+  return spotifyData;
 }

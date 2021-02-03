@@ -6,11 +6,15 @@ import handleSignInClick from "./api/handleSignInClick";
 import useAccessToken from "./api/useAccessToken";
 import useSpotifyData from "./api/useSpotifyData";
 import useDiscogsData from "./api/useDiscogsData";
+import useGeniusData from "./api/useGeniusData";
 import ReleaseDetails from "./components/ReleaseDetails";
+import getCleanTrackDetails from "./api/getCleanTrackDetails";
 
 export default function Home() {
   const accessToken = useAccessToken();
   const spotifyData = useSpotifyData(accessToken);
+  const cleanTrackDetails = spotifyData && getCleanTrackDetails(spotifyData);
+  console.log("lyrics", useGeniusData(cleanTrackDetails));
   const discogsData = useDiscogsData(spotifyData);
 
   return (
