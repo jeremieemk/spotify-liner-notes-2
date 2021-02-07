@@ -9,6 +9,7 @@ import useDiscogsData from "./api/useDiscogsData";
 import useGeniusData from "./api/useGeniusData";
 import ReleaseDetails from "./components/ReleaseDetails";
 import getCleanTrackDetails from "./api/getCleanTrackDetails";
+import useLastFmData from "./api/useLastFmData";
 
 export default function Home() {
   const accessToken = useAccessToken();
@@ -16,6 +17,7 @@ export default function Home() {
   const cleanTrackDetails = spotifyData && getCleanTrackDetails(spotifyData);
   console.log("lyrics", useGeniusData(cleanTrackDetails));
   const discogsData = useDiscogsData(spotifyData);
+  const artistBio = useLastFmData(cleanTrackDetails);
 
   return (
     <div className={styles.container}>
