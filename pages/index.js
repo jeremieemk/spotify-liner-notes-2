@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import handleSignInClick from "./api/handleSignInClick";
+import LandingPage from "./components/LandingPage";
 
 import useAccessToken from "./api/useAccessToken";
 import useSpotifyData from "./api/useSpotifyData";
@@ -30,9 +30,7 @@ export default function Home() {
         {spotifyData ? (
           <ReleaseDetails spotifyData={spotifyData} discogsData={discogsData} />
         ) : (
-          <h1 className={styles.title} onClick={handleSignInClick}>
-            Log In to Spotify
-          </h1>
+          <LandingPage />
         )}
       </main>
     </div>
