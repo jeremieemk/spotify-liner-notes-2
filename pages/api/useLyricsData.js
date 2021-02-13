@@ -1,7 +1,7 @@
 import { getLyrics } from "genius-lyrics-api";
 import { useEffect, useState } from "react";
 
-export default function useGeniusData(cleanTrackDetails) {
+export default function useLyricsData(cleanTrackDetails) {
   const [songLyrics, setSongLyrics] = useState(null);
   useEffect(() => {
     if (cleanTrackDetails) {
@@ -13,8 +13,9 @@ export default function useGeniusData(cleanTrackDetails) {
         optimizeQuery: true,
       };
       getLyrics(options).then((lyrics) => setSongLyrics(lyrics));
-    }
+
   }, [cleanTrackDetails]);
 
   return songLyrics;
 }
+

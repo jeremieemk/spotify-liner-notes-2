@@ -6,7 +6,7 @@ import LandingPage from "./components/LandingPage";
 import useAccessToken from "./api/useAccessToken";
 import useSpotifyData from "./api/useSpotifyData";
 import useDiscogsData from "./api/useDiscogsData";
-import useGeniusData from "./api/useGeniusData";
+import useLyricsData from "./api/useLyricsData";
 import ReleaseDetails from "./components/ReleaseDetails";
 import getCleanTrackDetails from "./api/getCleanTrackDetails";
 import useLastFmData from "./api/useLastFmData";
@@ -15,7 +15,7 @@ export default function Home() {
   const accessToken = useAccessToken();
   const spotifyData = useSpotifyData(accessToken);
   const cleanTrackDetails = spotifyData && getCleanTrackDetails(spotifyData);
-  console.log("lyrics", useGeniusData(cleanTrackDetails));
+  console.log("lyrics", useLyricsData(cleanTrackDetails));
   const discogsData = useDiscogsData(spotifyData);
   const artistBio = useLastFmData(cleanTrackDetails);
 
