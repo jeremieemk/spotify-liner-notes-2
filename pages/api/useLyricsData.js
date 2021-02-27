@@ -13,9 +13,8 @@ export default function useLyricsData(cleanTrackDetails) {
         optimizeQuery: true,
       };
       getLyrics(options).then((lyrics) => setSongLyrics(lyrics));
-
+    }
   }, [cleanTrackDetails]);
 
   return songLyrics;
 }
-

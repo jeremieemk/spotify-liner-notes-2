@@ -13,7 +13,7 @@ export default function useSpotifyData(accessToken) {
     })
       .then((response) => {
         if (response.status === 204 || response.status === 401) {
-          console.log(response);
+          console.log("spotify fetch result", response);
           console.log("manage error");
         } else {
           return response.json();
