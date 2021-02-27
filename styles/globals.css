@@ -1,7 +1,20 @@
 @font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/bentonsansregular.otf");
+  font-family: regular;
+  src: local("bentonsansregular"), url("/fonts/bentonsansregular.otf");
+}
+@font-face {
+  font-family: black;
+  src: local("bentonsansblack"), url("/fonts/bentonsansblack.otf");
+}
+@font-face {
+  font-family: book;
+  src: local("bentonsansbook"), url("/fonts/bentonsansbook.otf");
+}
+@font-face {
+  font-family: medium;
+  src: local("bentonsansmedium"), url("/fonts/bentonsansmedium.otf");
+}
+@font-face {
+  font-family: bold;
+  src: local("bentonsansbold"), url("/fonts/bentonsansbold.otf");
 }
