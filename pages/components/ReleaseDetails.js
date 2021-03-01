@@ -1,7 +1,9 @@
 import React from "react";
+import Image from "next/image";
 
 export default function ReleaseDetails(props) {
   const { discogsData, spotifyData } = props;
+  console.log("props", props);
 
   function renderArtists() {
     return spotifyData.artists.map((artist) => artist.name).join(", ");
@@ -18,6 +20,12 @@ export default function ReleaseDetails(props) {
   console.log("ordered list", orderedReleaselist);
   return (
     <div>
+      <Image
+        src={spotifyData.album.images[0].url}
+        alt=""
+        width={500}
+        height={500}
+      />
       <h1>
         {renderArtists()} - {spotifyData.name}
       </h1>

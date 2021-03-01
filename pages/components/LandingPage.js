@@ -12,12 +12,7 @@ export default function LandingPage(props) {
         <strong>Spotify Liner Notes</strong> brings you detailed information
         (credits, dates, cover art) about the songs you are currently streaming.
       </h1>
-      <Image
-        src="/img/dirty.jpg"
-        alt="Picture of the author"
-        width={500}
-        height={500}
-      />
+      <Image src="/img/dirty.jpg" alt="" width={500} height={500} />
       <h2>
         <span>
           <ArrowRightIcon /> How does it work?
