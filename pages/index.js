@@ -28,7 +28,11 @@ export default function Home() {
 
       <main className={styles.main}>
         {spotifyData ? (
-          <ReleaseDetails spotifyData={spotifyData} discogsData={discogsData} />
+          <ReleaseDetails
+            spotifyData={spotifyData}
+            discogsData={discogsData}
+            artistBio={artistBio}
+          />
         ) : (
           <LandingPage />
         )}

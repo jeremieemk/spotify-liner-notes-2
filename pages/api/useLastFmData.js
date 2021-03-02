@@ -9,7 +9,7 @@ export default function useLastFmData(cleanTrackDetails) {
       )
         // Handle success
         .then((response) => response.json()) // convert to json
-        .then((json) => console.log("test api", json.artist.bio.content)) //print data to console
+        .then((json) => setArtistBio(json.artist.bio.content)) //print data to console
         .catch((err) => console.log("Request Failed", err));
     }
   }, [cleanTrackDetails]);
