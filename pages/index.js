@@ -15,7 +15,7 @@ export default function Home() {
   const accessToken = useAccessToken();
   const spotifyData = useSpotifyData(accessToken);
   const cleanTrackDetails = spotifyData && getCleanTrackDetails(spotifyData);
-  // console.log("lyrics", useLyricsData(cleanTrackDetails));
+  const songLyrics = useLyricsData(cleanTrackDetails);
   const discogsData = useDiscogsData(spotifyData);
   const artistBio = useLastFmData(cleanTrackDetails);
 
@@ -32,6 +32,7 @@ export default function Home() {
             spotifyData={spotifyData}
             discogsData={discogsData}
             artistBio={artistBio}
+            songLyrics={songLyrics}
           />
         ) : (
           <LandingPage />

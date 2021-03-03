@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import ArtistBio from "./ArtistBio";
+import Lyrics from "./Lyrics";
 
 export default function ReleaseDetails(props) {
-  const { discogsData, spotifyData } = props;
+  const { discogsData, spotifyData, songLyrics } = props;
   console.log("props", props);
 
   function renderArtists() {
@@ -31,6 +32,7 @@ export default function ReleaseDetails(props) {
         {renderArtists()} - {spotifyData.name}
       </h1>
       <ArtistBio artistBio={props.artistBio} />
+      <Lyrics songLyrics={props.songLyrics} />
       {discogsData &&
         orderedReleaselist.map((release) => {
           return (
