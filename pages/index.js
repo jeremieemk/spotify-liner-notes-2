@@ -7,7 +7,7 @@ import useAccessToken from "./api/useAccessToken";
 import useSpotifyData from "./api/useSpotifyData";
 import useDiscogsData from "./api/useDiscogsData";
 import useLyricsData from "./api/useLyricsData";
-import ReleaseDetails from "./components/ReleaseDetails";
+import ReleaseDetails from "./components/ReleaseDetails/index.js";
 import getCleanTrackDetails from "./api/getCleanTrackDetails";
 import useLastFmData from "./api/useLastFmData";
 
